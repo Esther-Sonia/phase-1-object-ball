@@ -217,3 +217,26 @@ const mostPointsScored = function () {
 return highestScorer;
  };
  console.log(mostPointsScored());
+
+ const winningTeam = () => {
+    let highestPoints = 0;
+    let winningTeam = "";
+
+
+    for (let team of Object.values(gameObject)) {
+        let totalPoints = 0;
+
+        for (let playerName in team.players) {
+            totalPoints += team.players[playerName].points;
+        }
+
+        if (totalPoints > highestPoints) {
+            highestPoints = totalPoints;
+            winningTeam = team.teamName;
+        }
+    }
+
+    return winningTeam;
+};
+
+console.log(winningTeam());
