@@ -186,3 +186,19 @@ const playerStats = playerName => {
 };
 
 console.log(playerStats("Ben Gordon"));
+
+const bigShoeRebounds = function () {
+    let largestShoeSize = 0;
+    let rebounds = 0;
+
+    Object.values(gameObject).forEach(team => {
+        Object.values(team.players).forEach(player => {
+            if (player.shoe > largestShoeSize) {
+                largestShoeSize = player.shoe;
+                rebounds = player.rebounds;
+            }
+        });
+    });
+    return rebounds;
+};
+console.log(bigShoeRebounds());
