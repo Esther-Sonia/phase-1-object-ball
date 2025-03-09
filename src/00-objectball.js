@@ -114,3 +114,17 @@ let gameObject = {
 };
 
  console.log(gameObject.homeTeam.players["Alan Anderson"]);
+
+ const numPointsScored = playerName => {
+    const teams = Object.values(gameObject); 
+    
+    for (let team of teams) {
+        if (team.players[playerName]) {
+            return team.players[playerName].points; 
+        }
+    }
+
+    return "Player not found"; 
+};
+
+ console.log(numPointsScored("Alan Anderson")); 
