@@ -240,3 +240,20 @@ return highestScorer;
 };
 
 console.log(winningTeam());
+
+const playerWithLongestName = () => {
+    let longestName = "";
+
+    for (let team of Object.values(gameObject)) {  
+        for (let playerName in team.players) {  
+            if (playerName.length > longestName.length) {  
+                longestName = playerName;  
+            }
+        }
+    }
+
+    return longestName;
+};
+
+console.log(playerWithLongestName());
+
