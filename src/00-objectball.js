@@ -175,3 +175,14 @@ const playerNumbers = teamName => {
 };
 
 console.log(playerNumbers("Brooklyn Nets"));
+
+const playerStats = playerName => {
+    for (let team of Object.values(gameObject)) {
+        if (team.players[playerName]) {
+            return team.players[playerName];
+        }
+    }
+    return "Player not found";
+};
+
+console.log(playerStats("Ben Gordon"));
