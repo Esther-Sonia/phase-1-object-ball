@@ -142,3 +142,17 @@ let gameObject = {
 };
 
  console.log(shoeSize("Brendan Haywood"));
+
+ const teamColors = (teamName) => {
+    const teams = Object.values(gameObject); 
+
+    for (let team of teams) {
+        if (team.teamName === teamName) {
+            return team.colors; 
+        }
+    }
+
+    return "Team not found"; 
+};
+
+console.log(teamColors("Brooklyn Nets"));
