@@ -128,3 +128,17 @@ let gameObject = {
 };
 
  console.log(numPointsScored("Alan Anderson")); 
+
+ const shoeSize = playerName => {
+    const teams = Object.values(gameObject); 
+
+    for (let team of teams) {
+        if (team.players[playerName]) {
+            return team.players[playerName].shoe;
+        }
+    }
+    return "Player not found"
+
+};
+
+ console.log(shoeSize("Brendan Haywood"));
