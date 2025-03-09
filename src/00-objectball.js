@@ -164,3 +164,14 @@ const teamNames = () => {
 };
 
 console.log(teamNames()); 
+
+const playerNumbers = teamName => {
+    for (let team of Object.values(gameObject)) {
+        if (team.teamName === teamName) {
+            return Object.values(team.players).map(player => player.number);
+        }
+    }
+    return "Team not found";
+};
+
+console.log(playerNumbers("Brooklyn Nets"));
