@@ -202,3 +202,18 @@ const bigShoeRebounds = function () {
     return rebounds;
 };
 console.log(bigShoeRebounds());
+const mostPointsScored = function () {
+    let mostPointsScored = 0;
+    let highestScorer = "";
+
+    Object.values(gameObject).forEach(team => {
+        Object.entries(team.players).forEach(([playerName, player]) => {
+            if (player.points > mostPointsScored){
+                mostPointsScored = player.points; 
+                highestScorer = playerName;
+            }
+ });
+});
+return highestScorer;
+ };
+ console.log(mostPointsScored());
