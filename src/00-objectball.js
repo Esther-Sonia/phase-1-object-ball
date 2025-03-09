@@ -156,3 +156,11 @@ let gameObject = {
 };
 
 console.log(teamColors("Brooklyn Nets"));
+
+const teamNames = () => {
+    let names = [];
+    Object.values(gameObject).forEach(team => names.push(team.teamName));
+    return names;
+};
+
+console.log(teamNames()); 
