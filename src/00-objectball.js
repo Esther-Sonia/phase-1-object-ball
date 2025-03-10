@@ -241,6 +241,7 @@ return highestScorer;
 
 console.log(winningTeam());
 
+
 const playerWithLongestName = () => {
     let longestName = "";
 
@@ -256,4 +257,34 @@ const playerWithLongestName = () => {
 };
 
 console.log(playerWithLongestName());
+
+
+
+const doesLongNameStealATon = () => {
+    let longestName = "";
+    let mostSteals = 0;
+    let playerWithMostSteals = "";
+
+    for (let team of Object.values(gameObject)) {  
+        for (let playerName in team.players) {  
+            if (playerName.length > longestName.length) {  
+                longestName = playerName;
+            }
+        }
+    }
+
+    for (let team of Object.values(gameObject)) {  
+        for (let [playerName, player] of Object.entries(team.players)) {  
+            if (player.steals > mostSteals) {  
+                mostSteals = player.steals;
+                playerWithMostSteals = playerName;
+            }
+        }
+    }
+
+    return longestName === playerWithMostSteals;
+};
+
+console.log(doesLongNameStealATon());
+
 
