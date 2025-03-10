@@ -202,6 +202,7 @@ const bigShoeRebounds = function () {
     return rebounds;
 };
 console.log(bigShoeRebounds());
+
 const mostPointsScored = function () {
     let mostPointsScored = 0;
     let highestScorer = "";
@@ -257,7 +258,6 @@ const playerWithLongestName = () => {
 };
 
 console.log(playerWithLongestName());
-
 
 
 const doesLongNameStealATon = () => {
